@@ -20,26 +20,28 @@ $(function () {
 
 // 滚动时间监听
 $(document).scroll(function () {
-    var scroH = $(document).scrollTop();  //滚动高度
-    var viewH = $(window).height();  //可见高度 
-    var contentH = $(document).height();  //内容高度
+    let scroH = $(document).scrollTop();  //滚动高度
+    let viewH = $(window).height();  //可见高度 
+    let topH = $('.top-nav-box').eq(0).height();// 导航栏高度
+    let mainH = $('.main-content-box').eq(0).height();// 左侧内容高度
+    let sideH = $('.side-content-box').eq(0).height();// 右侧边栏高度
 
     $('.left-fix-box').eq(0).css('top', 350 + scroH + 'px');
     $('.right-fix-box').eq(0).css('top', 350 + scroH + 'px');
 
     // 顶部固定 右侧较矮
-    if (scroH >= $('.top-nav-box').eq(0).height()) {
-        $('.side-content-box').eq(0).css('top', scroH - $('.top-nav-box').eq(0).height() + 'px');
+    if (scroH >= topH) {
+        $('.side-content-box').eq(0).css('top', scroH - topH + 'px');
     } else {
         $('.side-content-box').eq(0).css('top', 0 + 'px');
     }
 
     // 底部固定 右侧较长
-    if (scroH >= $('.top-nav-box').eq(0).height() + $('.side-content-box').eq(0).height() - $(window).height()) {
-        $('.side-content-box').eq(0).css('top', scroH + $(window).height() - ($('.top-nav-box').eq(0).height() + $('.side-content-box').eq(0).height()) + 'px');
+    if (scroH >= topH + sideH - viewH) {
+        $('.side-content-box').eq(0).css('top', scroH + viewH - topH - sideH + 'px');
     }
 
-    if (scroH >= $('.top-nav-box').eq(0).height() + $('.main-content-box').eq(0).height() - $(window).height()) {
-        $('.side-content-box').eq(0).css('top', $('.main-content-box').eq(0).height() - $('.side-content-box').eq(0).height() + 'px');
+    if (scroH >= topH + mainH - viewH) {
+        $('.side-content-box').eq(0).css('top', mainH - sideH + 'px');
     }
 });
