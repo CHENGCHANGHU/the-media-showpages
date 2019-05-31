@@ -48,7 +48,7 @@ body {
 .main-content-box {
     width: 65%;
     height: auto;
-    background-color: rgba(178, 218, 162, 0.4);
+    /* background-color: rgba(178, 218, 162, 0.4); */
     box-sizing: border-box;
     padding-right: 20px;
 }
@@ -56,7 +56,7 @@ body {
 .side-content-box {
     width: 35%;
     position: relative;
-    background-color: rgba(165, 157, 212, 0.4);
+    /* background-color: rgba(165, 157, 212, 0.4); */
 }
 
 .left-fix-box {
@@ -70,17 +70,17 @@ body {
 
 .right-fix-box {
     width: 50px;
-    height: 200px;
+    height: 100px;
     left: 1205px;
-    top: 350px;
+    top: 500px;
     position: absolute;
-    background-color: rgba(161, 108, 57, 0.815);
+    /* background-color: rgba(161, 108, 57, 0.815); */
 }
 
 /* *************************************************************** */
 
 .copyright-box {
-    width: 1200px;
+    width: 1200px; 
     height: 120px;
     margin: 0 auto;
     background-color: rgba(144, 206, 177, 0.4);
