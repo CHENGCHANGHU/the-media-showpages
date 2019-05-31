@@ -543,7 +543,7 @@
 /* ********************************************************** */
 
 .fix-card{
-    background-color: #eee;
+    background-color: rgb(248, 247, 247);
     box-shadow: 2px 2px 4px #333333;
     border-radius: 5px;
     width: 50px;
